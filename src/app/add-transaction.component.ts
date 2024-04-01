@@ -67,7 +67,7 @@ type Full<T> = {
   imports: [ReactiveFormsModule],
   standalone: true,
 })
-export class AddExpenseComponent {
+export class AddTransactionComponent {
   open = model(false);
   transactionAdded = output<Full<typeof this.form.value>>();
   formBuilder = inject(FormBuilder);

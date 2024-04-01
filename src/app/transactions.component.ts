@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, WritableSignal, computed, signal } from '@angular/core';
-import { AddExpenseComponent } from './add-transaction.component';
+import { AddTransactionComponent } from './add-transaction.component';
 import { Transaction } from './types/transaction.type';
 
 @Component({
@@ -97,9 +97,9 @@ import { Transaction } from './types/transaction.type';
     }
   `,
   standalone: true,
-  imports: [DatePipe, AddExpenseComponent],
+  imports: [DatePipe, AddTransactionComponent],
 })
-export default class ExpensesComponent {
+export default class TransactionsComponent {
   transactions: WritableSignal<Transaction[]> = signal([
     {
       id: 1,
