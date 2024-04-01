@@ -1,12 +1,12 @@
 import { Component, inject, model, output, signal } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 type Full<T> = {
   [P in keyof T]-?: T[P];
 };
 
 @Component({
-  selector: 'app-add-expense',
+  selector: 'app-add-transaction',
   template: `
     <dialog [open]="open()">
       <form [formGroup]="form">
@@ -73,8 +73,8 @@ export class AddTransactionComponent {
   formBuilder = inject(FormBuilder);
   type = signal('expense');
   form = this.formBuilder.nonNullable.group({
-    title: this.formBuilder.nonNullable.control(''),
-    amount: this.formBuilder.nonNullable.control<number>(0),
+    title: this.formBuilder.nonNullable.control('', {validators: Validators.required}),
+    amount: this.formBuilder.nonNullable.control<number>(0, {validators: Validators.required}),
   });
 
   addTransaction() {

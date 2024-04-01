@@ -4,7 +4,7 @@ import { AddTransactionComponent } from './add-transaction.component';
 import { Transaction } from './types/transaction.type';
 
 @Component({
-  selector: 'app-expenses',
+  selector: 'app-transactions',
   template: `
     <div class="container">
       <header>
@@ -40,7 +40,7 @@ import { Transaction } from './types/transaction.type';
         </tbody>
       </table>
     </div>
-    <app-add-expense
+    <app-add-transaction
       [(open)]="addTransactionDialogOpen"
       (transactionAdded)="addTransaction($event)"
     />
